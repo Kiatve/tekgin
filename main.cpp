@@ -24,13 +24,12 @@ int main()
 	Enemy enemy2{ const_cast<Character&&>(chara) };
 	Enemy enemy3{ dynamic_cast<Character&>(enemy1) };
 	Enemy enemy4{ { { .vitality = 0 } } };
-	try {
-		std::println("{}", Enemy::getCount());
-		std::println("{}", chara.getAttributes().vitality);
-		std::println("{}", enemy2.getAttributes().vitality);
-	} catch (const std::exception& err) {
-		Util::log(error, "{}", err.what());
-	}
+
+	Util::log(none, "{}", Enemy::getCount());
+	Util::log(none, "{}", chara.getAttributes().vitality);
+	Util::log(none, "{}", enemy2.getAttributes().vitality);
+
 	Util::log(enemy1);
+
 	return 0;
 }

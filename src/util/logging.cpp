@@ -25,7 +25,10 @@ std::ostream& Log::getStream(Log::Level level)
 
 std::ostream& Log::getFile()
 {
-	static std::ofstream file{ std::format("{}/Tekgin_{:%Y-%m-%d_%H-%M-%S}.log", log_dir.string(), START_TIME), std::ios::out };
+	static std::ofstream file{ log_file };
+	[[unlikely]] if (!file.good()) {
+		std::cerr << "\033[1;31mERROR\033[0m: Can't write to log file " << log_file.string() << "\n";
+	}
 	return file;
 }
 

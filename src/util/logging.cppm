@@ -8,6 +8,7 @@ import std;
 import katvees.tekgin.paths;
 import katvees.tekgin.constants;
 
+
 using std::strcmp;
 
 namespace Tekgin::Util
@@ -37,9 +38,10 @@ export const Log::Level LOG_LEVEL = [] {
 	return info;
 }();
 
-[[gnu::always_inline]] static inline bool shouldLog(Log::Level level) { return level <= LOG_LEVEL; }
+[[gnu::always_inline]] inline bool shouldLog(Log::Level level) { return level <= LOG_LEVEL; }
 
-export std::string logLevelToString(Log::Level level);
+std::string logLevelToString(Log::Level level);
+export std::string logLevelLabel(Log::Level level);
 
 /// @todo possible make fmt of type std::format_string
 export template<typename... Args>
@@ -49,18 +51,9 @@ struct LogData
 	std::tuple<Args...> args;
 };
 
-template<typename T>
-struct is_log_data : std::false_type
-{};
-template<typename... Args>
-struct is_log_data<LogData<Args...>> : std::true_type
-{};
-template<typename T>
-constexpr bool is_log_data_v = is_log_data<T>::value;
-
 /// @brief Concept requiring the class to have the member function logFormat
 template<typename T>
-concept HasLogFormat = requires(const T& t) { is_log_data_v<decltype(t.logFormat())>; };
+concept HasLogFormat = requires(const T& t) { t.logFormat(); };
 
 /**
  * @brief Log a string into cout or cerr depending on log level or to specified stream
@@ -74,11 +67,19 @@ export template<typename... Args>
 void log(Log::Level level, std::string_view fmt, Args&&... args)
 {
 	if (shouldLog(level)) {
-		std::println(Log::getStream(level),
-		             std::runtime_format(logLevelToString(level) + ": " + fmt),
-		             std::forward<Args>(args)...);
+		try {
+			std::println(Log::getStream(level),
+			             std::runtime_format(logLevelLabel(level) + ": " + fmt),
+			             std::forward<Args>(args)...);
+		} catch (const std::exception& e) {
+			std::cerr << "ERROR: Logging to stdout/stderr failed: " << e.what() << "\n";
+		}
 	}
-	std::println(Log::getFile(), std::runtime_format(logLevelToString(level) + ": " + fmt), std::forward<Args>(args)...);
+	try {
+		std::println(Log::getFile(), std::runtime_format(logLevelLabel(level) + ": " + fmt), std::forward<Args>(args)...);
+	} catch (const std::exception& e) {
+		std::cerr << "ERROR: Logging to file failed: " << e.what() << "\n";
+	}
 }
 
 /**
