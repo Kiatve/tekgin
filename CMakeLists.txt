@@ -63,12 +63,14 @@ target_compile_features(tekgin PUBLIC cxx_std_23)
 
 add_compile_options(
 	PRIVATE
-	$<$<CXX_COMPILER_ID:Clang>:-Wall -Wextra -Wpedantic>
+	$<$<CXX_COMPILER_ID:Clang>:
+		-stdlib=libc++ -unwindlib=libunwind -rtlib=compiler-rt -lc++abi>
 	PUBLIC
-		-stdlib=libc++ -unwindlib=libunwind -rtlib=compiler-r -lc++abi)
+		-Wall -Wextra -Wpedantic )
 
 add_compile_options(
 	PRIVATE
-	$<$<CXX_COMPILER_ID:Clang>:-Wall -Wextra -Wpedantic>
+	$<$<CXX_COMPILER_ID:Clang>:
+		-stdlib=libc++ -unwindlib=libunwind -rtlib=compiler-rt -lc++abi>
 	PUBLIC
-		-stdlib=libc++ -unwindlib=libunwind -rtlib=compiler-rt -lc++abi)
+		-Wall -Wextra -Wpedantic )
