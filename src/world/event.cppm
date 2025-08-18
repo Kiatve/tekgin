@@ -1,1 +1,1 @@
-export module katvees.tekgin.core.interfaces.event;
+export module katvees.tekgin.world.event;

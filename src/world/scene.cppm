@@ -1,1 +1,1 @@
-export module katvees.tekgin.core.interfaces.scene;
+export module katvees.tekgin.world.scene;
