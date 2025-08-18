@@ -16,8 +16,8 @@ namespace Tekgin::Util
 
 export namespace Log
 {
-	enum Level : std::int8_t { fatal = -1, none, error, warn, info, debug, trace };
-	[[gnu::const]] std::ostream& getStream(Level level = info);
+	enum class Level : std::int8_t { fatal = -1, none, error, warn, info, debug, trace };
+	[[gnu::const]] std::ostream& getStream(Level level = Level::info);
 	[[gnu::const]] std::ostream& getFile();
 }; // namespace Log
 

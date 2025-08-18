@@ -16,7 +16,8 @@ concept Attacker = requires(const C& c) {
 
 export struct Attack
 {
-	enum Kind : std::uint8_t { melee, ranged, magic };
+	enum class Kind : std::uint8_t { melee, ranged, magic };
+	using enum Kind;
 
 	Kind    kind         = Kind::melee;
 	Element element      = Element::none;
