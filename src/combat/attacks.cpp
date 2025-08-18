@@ -1,4 +1,4 @@
-module katvees.tekgin.combat.attacks;
+module katve.tekgin.combat.attacks;
 
 namespace Tekgin
 {

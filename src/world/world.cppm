@@ -1,2 +1,2 @@
-export module katvees.tekgin.world;
-export import katvees.tekgin.world.map;
+export module katve.tekgin.world;
+export import katve.tekgin.world.map;

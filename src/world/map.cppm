@@ -1,1 +1,1 @@
-export module katvees.tekgin.world.map;
+export module katve.tekgin.world.map;

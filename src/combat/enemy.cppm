@@ -1,9 +1,9 @@
-export module katvees.tekgin.combat.enemy;
+export module katve.tekgin.combat.enemy;
 import std;
 
-import katvees.tekgin.core.character;
-import katvees.tekgin.core.interfaces.saveable;
-import katvees.tekgin.util.logging;
+import katve.tekgin.core.character;
+import katve.tekgin.core.interfaces.saveable;
+import katve.tekgin.util.logging;
 
 namespace Tekgin
 {

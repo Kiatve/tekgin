@@ -4,7 +4,7 @@
  */
 module;
 #include <cassert>
-export module katvees.tekgin.combat.elements;
+export module katve.tekgin.combat.elements;
 import std;
 
 export namespace Tekgin

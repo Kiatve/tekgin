@@ -1,4 +1,4 @@
-export module katvees.tekgin.constants;
+export module katve.tekgin.constants;
 import std;
 
 namespace Tekgin

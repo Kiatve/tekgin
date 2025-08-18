@@ -1,1 +1,1 @@
-export module katvees.tekgin.core.interfaces.object;
+export module katve.tekgin.core.interfaces.object;

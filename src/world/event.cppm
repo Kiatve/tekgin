@@ -1,1 +1,1 @@
-export module katvees.tekgin.world.event;
+export module katve.tekgin.world.event;

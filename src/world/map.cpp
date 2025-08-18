@@ -1,1 +1,1 @@
-module katvees.tekgin.world.map;
+module katve.tekgin.world.map;

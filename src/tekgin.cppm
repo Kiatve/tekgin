@@ -1,8 +1,8 @@
 module;
-export module katvees.tekgin;
-export import katvees.tekgin.core;
-export import katvees.tekgin.combat;
-export import katvees.tekgin.constants;
-export import katvees.tekgin.util;
-export import katvees.tekgin.world;
-export import katvees.tekgin.paths;
+export module katve.tekgin;
+export import katve.tekgin.core;
+export import katve.tekgin.combat;
+export import katve.tekgin.constants;
+export import katve.tekgin.util;
+export import katve.tekgin.world;
+export import katve.tekgin.paths;

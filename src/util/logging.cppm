@@ -2,11 +2,11 @@
  * @brief Implements logging functions and allows classes to have a formatter function to easily log the object
  */
 
-export module katvees.tekgin.util.logging;
+export module katve.tekgin.util.logging;
 import std;
 
-import katvees.tekgin.paths;
-import katvees.tekgin.constants;
+import katve.tekgin.paths;
+import katve.tekgin.constants;
 
 
 using std::strcmp;

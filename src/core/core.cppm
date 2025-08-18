@@ -1,4 +1,4 @@
-export module katvees.tekgin.core;
-export import katvees.tekgin.core.character;
-export import katvees.tekgin.core.interfaces.saveable;
-export import katvees.tekgin.core.engine;
+export module katve.tekgin.core;
+export import katve.tekgin.core.character;
+export import katve.tekgin.core.interfaces.saveable;
+export import katve.tekgin.core.engine;

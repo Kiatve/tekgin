@@ -1,7 +1,7 @@
-export module katvees.tekgin.core.character;
+export module katve.tekgin.core.character;
 import std;
 
-import katvees.tekgin.combat.elements;
+import katve.tekgin.combat.elements;
 
 export namespace Tekgin
 {

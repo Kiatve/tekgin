@@ -1,4 +1,4 @@
-export module katvees.tekgin.core.interfaces.saveable;
+export module katve.tekgin.core.interfaces.saveable;
 import std;
 
 namespace Tekgin

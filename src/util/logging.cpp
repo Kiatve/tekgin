@@ -1,4 +1,4 @@
-module katvees.tekgin.util.logging;
+module katve.tekgin.util.logging;
 
 namespace Tekgin::Util
 {

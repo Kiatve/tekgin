@@ -1,7 +1,7 @@
-export module katvees.tekgin.paths;
+export module katve.tekgin.paths;
 import std;
 
-import katvees.tekgin.constants;
+import katve.tekgin.constants;
 
 namespace fs = std::filesystem;
 

@@ -1,1 +1,1 @@
-export module katvees.tekgin.combat.status_effects;
+export module katve.tekgin.combat.status_effects;

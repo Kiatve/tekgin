@@ -1,8 +1,8 @@
-export module katvees.tekgin.core.engine;
+export module katve.tekgin.core.engine;
 import std;
 
-import katvees.tekgin.paths;
-import katvees.tekgin.constants;
+import katve.tekgin.paths;
+import katve.tekgin.constants;
 
 namespace Tekgin
 {

@@ -1,2 +1,2 @@
-export module katvees.tekgin.util;
-export import katvees.tekgin.util.logging;
+export module katve.tekgin.util;
+export import katve.tekgin.util.logging;

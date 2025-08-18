@@ -1,6 +1,6 @@
 module;
 #include <cassert>
-module katvees.tekgin.combat.enemy;
+module katve.tekgin.combat.enemy;
 
 using enum Tekgin::Util::Log::Level;
 

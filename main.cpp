@@ -1,5 +1,5 @@
 import std;
-import katvees.tekgin;
+import katve.tekgin;
 
 int main()
 {
