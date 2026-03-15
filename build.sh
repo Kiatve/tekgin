@@ -17,6 +17,6 @@ if [[ -z $CONFIG ]]; then
 	cmake --build build $CLEAN
 else
 	for config in $(echo "$CONFIG" | tr ";" " "); do
-		cmake --build build $CLEAN --config $config --parallel ${THREADS:-$(nproc)}
+		cmake --build build $CLEAN --config "$config" --parallel "${THREADS:-$(nproc)}"
 	done
 fi

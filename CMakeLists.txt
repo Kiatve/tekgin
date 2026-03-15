@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.30)
 
-set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "d0edc3af-4c50-42ea-a356-e2862fe7a444")
+set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "451f2fe2-a8a2-47c3-bc32-94786d8fc91b")
 
 project(Tekgin
 	VERSION 0.0.1
@@ -59,18 +59,21 @@ target_sources(tekgin
 	PRIVATE
 		${MODULE_IMPLEMENTATIONS})
 
-target_compile_features(tekgin PUBLIC cxx_std_23)
+target_compile_features(tekgin PUBLIC cxx_std_26)
 
-add_compile_options(
-	PRIVATE
-	$<$<CXX_COMPILER_ID:Clang>:
-		-stdlib=libc++ -unwindlib=libunwind -rtlib=compiler-rt -lc++abi>
-	PUBLIC
-		-Wall -Wextra -Wpedantic )
+target_compile_options(tekgin PRIVATE
+	-stdlib=libc++
+	-fmodules
+	-fcxx-modules
+)
 
-add_compile_options(
-	PRIVATE
-	$<$<CXX_COMPILER_ID:Clang>:
-		-stdlib=libc++ -unwindlib=libunwind -rtlib=compiler-rt -lc++abi>
-	PUBLIC
-		-Wall -Wextra -Wpedantic )
+target_compile_options(tekgin PUBLIC
+	-Wall
+	-Wextra
+	-Wpedantic
+)
+
+target_link_options(tekgin PRIVATE
+	-stdlib=libc++
+	-lc++abi
+)
